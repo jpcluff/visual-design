@@ -1,0 +1,15 @@
+html {
+    font-family: sans-serif;
+  }
+  
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
+  li {
+    line-height: 1.5em;
+  }
+  
