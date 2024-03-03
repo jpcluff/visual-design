@@ -5,7 +5,7 @@ const jsonObj = JSON.parse(jsonString);
 // console.log(typeof jsonObj.peoplePets)
 const petList = jsonObj.peoplePets;
 // console.log(petList);
-const petAnimal = ["cat", "dog", "goldfish", "budgerigar", "pangolin", "dodo"];
+const petAnimal = ["cat", "dog", "goldfish", "budgerigar", "pangolin"];
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
