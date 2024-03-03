@@ -19,21 +19,10 @@ fetch("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.
           const pokeList = document.querySelector("select");
           for (pokeName of optionList)
           {
-            pokeList.appendChild(document.createElement("option")).textContent = pokeName;
+            const optionValue = document.createElement("option");
+            let lower = pokeName.toLowerCase();
+            optionValue.value = lower;
+            pokeList.appendChild(optionValue).textContent = pokeName;
+
           }
     })
- 
-    
-
-    // .then()
-    //     pokeImg.src = pokeData.TODO;
-    //     pokeImg.onload = function () {
-    //         for ( let i = 0; i < TODO; i++)
-    //         {
-    //             let dx = ;
-    //             let dy = ;
-    //             cx.drawImage(patternImg, dx, dy);
-    //         }
-                   
-    //     }
-    // })
