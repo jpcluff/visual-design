@@ -43,14 +43,14 @@ form.addEventListener("submit", pickPoke)
 
 function pickPoke(e) {
     e.preventDefault()
-    let chooser = form.querySelector("#chooser")
-    // console.log(chooser);
-    let pokeChoice = chooser.value;
+    let pokeSelect = form.querySelector("#pokeSelect")
+    // console.log(pokeSelect);
+    let pokeChoice = pokeSelect.value;
     // console.log(pokeChoice);
     pokeImage(pokeChoice);
 }
 
-// function depends on successful fetch populating chooser values.
+// function depends on successful fetch populating pokeSelect values.
 function pokeImage(pokemonName) {
     console.log(`pokeImage called with ${pokemonName}.`);
     console.log(pokeArray);
