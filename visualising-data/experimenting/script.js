@@ -1,5 +1,7 @@
 let pokeArray = [];
 let optionList = [];
+let imageList = []
+
 const cx = document.querySelector("canvas").getContext("2d");
 const pokeImg = new Image();
 
@@ -16,25 +18,26 @@ fetch("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.
     })
     .then(pokeData => {
         pokeArray = pokeData.pokemon;
-        for (const pokemon of pokeArray)
-        {
+        for (const pokemon of pokeArray) {
             optionList.push(pokemon.name);
+            let pokeImageObj = { ["pokemonName"]: pokemon.name, ["img"]: pokemon.img };
+            imageList.push(pokeImageObj);
         }
+
     })
     .then(sortOptions => {
         optionList.sort();
         // console.log(optionList);
     })
     .then(populateOptions => {
-          //populate the select dropdown with pokemon names.
-          const pokeList = document.querySelector("select");
-          for (pokeName of optionList)
-          {
+        //populate the select dropdown with pokemon names.
+        const pokeList = document.querySelector("select");
+        for (pokeName of optionList) {
             const optionValue = document.createElement("option");
             optionValue.value = pokeName;
             pokeList.appendChild(optionValue).textContent = pokeName;
 
-          }
+        }
     })
 
 let form = document.querySelector("form");
@@ -47,17 +50,24 @@ function pickPoke(e) {
     // console.log(pokeSelect);
     let pokeChoice = pokeSelect.value;
     // console.log(pokeChoice);
-    pokeImage(pokeChoice);
+    setPokeImageSrc(pokeChoice, imageList);
 }
 
-// function depends on successful fetch populating pokeSelect values.
-function pokeImage(pokemonName) {
-    console.log(`pokeImage called with ${pokemonName}.`);
-    console.log(pokeArray);
-    // TODO loop the array until pokemomName is equivalent to pokemon.name 
-    // then set pokeImage.src to img url
-    // then onload check the img dimensions
-    // then set the canvas to fit the image
-    // then draw the image on the canvas
+// TODO find the pokemonName & return the object
+// function depends on successful fetch populating pokeSelect values. 
 
+// then set pokeImage.src to img url
+function setPokeImageSrc(pokemonName, imageList) {
+    console.log(`called setPokeImageSrc with ${pokemonName} & ${imageList.length}`);
+    for (const pokemon of imageList) {
+        if (pokemon.pokemonName == pokemonName) {
+            console.log(imageList);
+            let src = pokemon.img;
+             console.log(`src value is ${src}`);
+            //  TODO call set pokeImage for canvas
+        }
+    }
 }
+// then onload check the img dimensions
+// then set the canvas to fit the image
+// then draw the image on the canvas
