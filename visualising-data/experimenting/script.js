@@ -2,15 +2,15 @@ let pokeArray = [];
 let optionList = [];
 let imageList = []
 
-const cx = document.querySelector("canvas").getContext("2d");
+// const cx = document.querySelector("canvas").getContext("2d");
 const pokeImg = new Image();
 
-let canvasWidth = 800;
-let canvasHeight = 600;
+// let canvasWidth = 800;
+// let canvasHeight = 600;
 
 
-cx.canvas.width = canvasWidth;
-cx.canvas.height = canvasHeight;
+// cx.canvas.width = canvasWidth;
+// cx.canvas.height = canvasHeight;
 
 fetch("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json")
     .then(response => {
@@ -63,16 +63,14 @@ function setPokeImageSrc(pokemonName, imageList) {
         if (pokemon.pokemonName == pokemonName) {
             console.log(imageList);
             let srcImage = pokemon.img;
-             console.log(`src value is ${srcImage}`);
-             pokeImg.src = srcImage;
-             console.log(pokeImg);
-             pokeImg.onload = function () {
-                 cx.drawImage(srcImage, 10, 10);
-                 }
-                        
-             }
+            console.log(`src value is ${srcImage}`);
+            // pokeImg.src = srcImage;
+            // console.log(pokeImg);
+            document.getElementById("pokeImage").src = srcImage;
+            // pokeImg.onload = function () {
+            // cx.drawImage(srcImage, 10, 10);
+            // }
+
         }
     }
-// then onload check the img dimensions
-// then set the canvas to fit the image
-// then draw the image on the canvas
+}
