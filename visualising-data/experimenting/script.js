@@ -62,12 +62,17 @@ function setPokeImageSrc(pokemonName, imageList) {
     for (const pokemon of imageList) {
         if (pokemon.pokemonName == pokemonName) {
             console.log(imageList);
-            let src = pokemon.img;
-             console.log(`src value is ${src}`);
-            //  TODO call set pokeImage for canvas
+            let srcImage = pokemon.img;
+             console.log(`src value is ${srcImage}`);
+             pokeImg.src = srcImage;
+             console.log(pokeImg);
+             pokeImg.onload = function () {
+                 cx.drawImage(srcImage, 10, 10);
+                 }
+                        
+             }
         }
     }
-}
 // then onload check the img dimensions
 // then set the canvas to fit the image
 // then draw the image on the canvas
