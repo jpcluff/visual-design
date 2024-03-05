@@ -53,9 +53,8 @@ function pickPoke(e) {
     setPokeImageSrc(pokeChoice, imageList);
 }
 
-// TODO find the pokemonName & return the object
-// function depends on successful fetch populating pokeSelect values. 
 
+// function depends on successful fetch populating pokeSelect values. 
 // then set pokeImage.src to img url
 function setPokeImageSrc(pokemonName, imageList) {
     console.log(`called setPokeImageSrc with ${pokemonName} & ${imageList.length}`);
