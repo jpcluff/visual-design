@@ -21,7 +21,7 @@ fetch("https://api.github.com/emojis")
     })
     .then(emojiData => {
         patternImg.src = emojiData.smiley_cat;
-        console.log(patternImg);
+        // console.log(patternImg);
         patternImg.onload = function () {
             for ( let i = 0; i < repetitions; i++)
             {
