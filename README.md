@@ -1,2 +1,0 @@
-# visual-design
-Visual Design
